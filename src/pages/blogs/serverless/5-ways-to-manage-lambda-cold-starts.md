@@ -23,7 +23,7 @@ In this article, you will learn how cold start issues occur, what factors contri
 
 A Lambda cold start occurs when a new function instance must be created and initialized. The cold start refers to the delay between invocation and runtime created by the initialization process. 
 
-Lambda cold starts occur when there is no available function instance to respond to an invocation. This can happen when instances have expired due to inactivity or when there are more invocations than active instances. Cold starts are an inherent problem with serverless models because providers are unwilling or unable to keep inactive instances alive indefinitely. 
+Lambda cold starts occur when there is no available function instance to respond to an invocation. This can happen when instances have expired due to inactivity or when there are more invocations than active instances. Cold starts are an inherent problem with [serverless models](https://hackernoon.com/what-is-serverless-architecture-what-are-its-pros-and-cons-cc4b804022e9) because providers are unwilling or unable to keep inactive instances alive indefinitely. 
 
 To maximize resource use and optimize provider costs, instances are only kept alive for a set amount of idle time. This means that unless your functions are consistently activated, you are going to have to manage latency caused by cold starts. 
 
@@ -38,7 +38,7 @@ Additionally, just-in-time (JIT) compilation, like that used by .NET languages, 
 ### Function chains
 In many applications, developers use chains of functions to perform tasks. This chaining is fine when functions are already available but can cause significant overhead if not. When chaining, each function in the chain must wait for the possible initialization and response of any later functions. 
 
-This ordered process compounds cold start times and can cause Lambda functions to time out. If timeouts occur, you have to start the invocation process all over, creating even more latency.
+This ordered process compounds cold start times and can cause [Lambda functions to time out](https://lumigo.io/blog/aws-lambda-timeout-best-practices/). If timeouts occur, you have to start the invocation process all over, creating even more latency.
 
 ### Virtual Private Clouds (VPC)
 While VPCs can help keep your data more secure, these networks are a barrier to the performance of Lambda functions. This is because most Lambda functions require an external connection for request and response operations. This connectivity requires the creation of an elastic network interface (ENI).
@@ -51,7 +51,7 @@ While you cannot completely eliminate the chance of cold starts when using Lambd
 ### 1. Measure current performance
 Measuring the current performance of your configurations can help you identify where you need to make changes and can help you anticipate latency. In particular, you should evaluate how frequently your functions are being invoked, how many invocations occur at once, and how long invocations take. You can then use these values to determine how many dedicated instances you need.
 
-Performance can be measured directly using metrics sent to AWS CloudWatch or you can use third-party tools. The former works well for individual functions but can only provide limited information and is not easily searchable. The latter enables you to invoke your functions many times, can provide visualizations of the results, and enables you to more easily evaluate aggregate data.
+Performance can be measured directly using metrics sent to [AWS CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html) or you can use third-party tools. The former works well for individual functions but can only provide limited information and is not easily searchable. The latter enables you to invoke your functions many times, can provide visualizations of the results, and enables you to more easily evaluate aggregate data.
 
 ### 2. Keep your functions warm
 Once your instances are initialized, you can keep them active to avoid the majority of your cold starts. Keeping functions warm can be done by either invoking the function or using warming logic with handler functions. Warmer logic pings functions to check their status, keeping the instance alive even if it isn’t fully invoked. 
@@ -59,7 +59,7 @@ Once your instances are initialized, you can keep them active to avoid the major
 To accomplish this, you can either manually configure your logic or you can use tooling to automate the process for many instances. Manual setup involves inserting logic into your handler functions and triggering that logic with CloudWatch Events and cron jobs. Or, with tooling, you can reuse the same logic for concurrent instances. 
 
 ### 3. Choose the right memory settings
-When using Lambda, your memory and CPU resources are directly tied. The more memory you provision, the more processing power your functions can access, and the faster initialization can occur. While you may be tempted to keep memory resources low to save costs, doing so can increase your cold start and runtimes times and end up costing you more regardless. 
+When using Lambda, your memory and [CPU resources](https://dev.to/byrro/how-to-optimize-lambda-memory-and-cpu-4dj1) are directly tied. The more memory you provision, the more processing power your functions can access, and the faster initialization can occur. While you may be tempted to keep memory resources low to save costs, doing so can increase your cold start and runtimes times and end up costing you more regardless. 
 
 To avoid higher costs due to insufficient resources, you need to find the balance point between resources and latency. This requires understanding how frequently your functions are invoked, the revenue dependent on those functions, and the latency during cold start and warm invocations.
 
