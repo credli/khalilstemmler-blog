@@ -1,7 +1,7 @@
 
 export class JSONLD {
   constructor () {
-    this.logoUrl = "";
+    this.logoUrl = "https://camo.githubusercontent.com/6316c376ca8e35369c6591c5663ea470e3f1de14/68747470733a2f2f692e696d6775722e636f6d2f476e46477651462e706e67";
   }
 
   createArticleMarkdown (title, description, image, datePublished, dateModified, fullArticleUrl) {
