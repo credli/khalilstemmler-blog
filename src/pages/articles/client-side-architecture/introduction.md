@@ -230,7 +230,7 @@ By splitting the model into **infrastructure,** **application,** and **domain** 
 
 ![img/blog/client-side-architecture/Frame_43.png](/img/blog/client-side-architecture/Frame_43.png)
 
-The middle layers (domain and application) are the purest. It's the code that *we,* the developers, **have to write from scratch**. Our since our app doesn't do much unless we can hook it up to the real-world. Using things like web servers, databases, APIs, and caches, the adapter layer provides a flexible way to integrate **those infrastructural dependencies into our app, while keeping them distanced** from our domain and app layer code. 
+The middle layers (domain and application) are the purest. It's the code that *we,* the developers, **have to write from scratch**. And since our app doesn't do much unless we can hook it up to the real-world. Using things like web servers, databases, APIs, and caches, the adapter layer provides a flexible way to integrate **those infrastructural dependencies into our app, while keeping them distanced** from our domain and app layer code. 
 
 <p class="special-quote">To learn more about the clean architecture read <a href="/articles/software-design-architecture/organizing-app-logic/">Organizing App Logic with the Clean Architecture [with Examples]</a>.</p>
 
