@@ -14,6 +14,8 @@ image: /img/blog/gatsby-related-posts/related-posts.png
 published: true
 ---
 
+<p class="special-quote">Translated by readers to: <a href="https://howtorecover.me/kak-sozdat-komponent-svyazannykh-soobscheniy-s-gatsbyjs">Russian</a></p>
+
 You know how some blogs have a section after reading an article that says "Related Posts" or "You might also like" (hint: check the bottom of this article 😜).
 
 I wanted to make something like that for **my** [Gatsby](https://www.gatsbyjs.org/) site so I can present readers with other articles they might potentially be interested in.
