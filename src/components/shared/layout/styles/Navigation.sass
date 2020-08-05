@@ -13,17 +13,20 @@
   z-index: 10;
   color: white;
   flex-direction: column;
+  top: 0;
+  transition: top 0.2s ease-in-out;
 
   &.scroll 
+    top: -110px;
+
     > .navigation-inner
-      transition: 0.2s all;
       padding: 0.85rem 1rem 0.85rem 1rem
 
   .retro-bars
     width: 100%;
 
     > div 
-      height: 0.4rem;
+      height: 0.5rem;
 
   .navigation-inner
     margin: 0 auto;

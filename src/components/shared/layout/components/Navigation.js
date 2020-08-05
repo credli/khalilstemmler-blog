@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import MobileNavigation from '../../mobile-navigation'
 import "../styles/Navigation.sass"
@@ -53,57 +53,55 @@ const Links = () => (
   </div>
 )
 
-class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      scrolled: false,
-    }
-
-    this.navOnScroll = this.navOnScroll.bind(this);
-  }
-
-  componentDidMount() {
+function useNavigation () {
+  const [scrolled, setScrolled] = useState(false);
+  const addScrollEventListener = () => {
     typeof window !== 'undefined'
-      && window.addEventListener('scroll', this.navOnScroll)
+      && window.addEventListener('scroll', navOnScroll.bind(this))
   }
 
-  componentWillUnmount() {
+  const removeScrollEventListener = () => {
     typeof window !== 'undefined'
-      && window.removeEventListener('scroll', this.navOnScroll)
+        && window.removeEventListener('scroll', navOnScroll.bind(this))
   }
 
-  navOnScroll() {
+  const navOnScroll = () => {
     if (window.scrollY > 20) {
-      this.setState({ scrolled: true })
+      setScrolled(true);
     } else {
-      this.setState({ scrolled: false })
+      setScrolled(false);
     }
   }
 
-  render() {
-    const { rawMode } = this.props;
-    const { scrolled } = this.state;
+  useEffect(() => {
+    addScrollEventListener();
+    return () => removeScrollEventListener()
+  }, [])
 
-    return (
-      <>
-        <MobileNavigation
-          topOffset={scrolled ? '16px' : '27px'}
-        />
+  return { scrolled }
+}
 
-        {!rawMode ? <div
-          className={scrolled ? "navigation scroll" : "navigation"}>
+function Navigation (props) {
+  const { scrolled } = useNavigation();
+  const { rawMode } = props;
+  
+  return (
+    <>
+      <MobileNavigation
+        topOffset={scrolled ? '16px' : '27px'}
+      />
+
+      {!rawMode ? (
+        <div className={scrolled ? "navigation scroll" : "navigation"}>
           <div className="navigation-inner">
             <Logo/>
             <Links/>
           </div>
           <RetroBars />
-        </div> : ''}
-        
-      </>
-    )
-  }
+        </div>
+      ) : ''}
+    </>
+  )
 }
 
 export default Navigation;
