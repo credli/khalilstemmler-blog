@@ -68,7 +68,7 @@ I fought with coming up with the best definition for a long time, and I'm prepar
 
 Software that doesn't serve the needs of it's users, simply isn't good software.
 
-And since the needs of our users changes often, it's important to make sure that software **can was designed in order to be changed**.
+And since the needs of our users changes often, it's important to make sure that software **was designed in order to be changed**.
 
 If software cannot be changed (easily), that <u>makes it bad software</u>, because it prevents us from satisfying the _current_ needs of our users.
 
