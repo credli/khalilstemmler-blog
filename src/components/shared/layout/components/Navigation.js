@@ -88,6 +88,7 @@ function Navigation (props) {
   return (
     <>
       <MobileNavigation
+        scrolled={scrolled}
         topOffset={scrolled ? '16px' : '27px'}
       />
 

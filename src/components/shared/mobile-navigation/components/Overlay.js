@@ -22,7 +22,9 @@ const Overlay = props => {
   return (
     <div
       className={
-        props.isOpen ? `overlayOpen overlayContainer` : "overlayContainer"
+        `overlayContainer ${props.isOpen  ? 'overlayOpen' : ''} 
+        ${props.scrolled ? 'scrolled' : ''}
+        `
       }
     >
       <OverlayLink

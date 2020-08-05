@@ -6,7 +6,7 @@ const MobileBurgerMenu = props => {
   return (
     <div
       style={{ top: props.topOffset }}
-      className="burgerMenuNavItem"
+      className={`burgerMenuNavItem ${props.scrolled ? 'scrolled' : ''} ${props.menuOpen ? 'open' : ''}`}
       href="javascript:void(0);"
       onClick={props.toggleBurgerMenu}
     >

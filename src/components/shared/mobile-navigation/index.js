@@ -37,15 +37,17 @@ class Navbar extends React.Component {
 
   render = () => {
     return (
-      <nav className="nav">
+      <nav className={`nav`}>
         <MobileBurgerMenu
           menuOpen={this.state.menuOpen}
           toggleBurgerMenu={this.toggleBurgerMenu}
           topOffset={this.props.topOffset}
+          scrolled={this.props.scrolled}
         />
         <Overlay
           isOpen={this.state.menuOpen}
           toggleBurgerMenu={this.toggleBurgerMenu}
+          scrolled={this.props.scrolled}
         />
       </nav>
     )
