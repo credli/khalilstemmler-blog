@@ -37,7 +37,7 @@ The truth is:
 
 Understanding how to:
 
-- Architect a system to serve the needs of it's users
+- Architect a system to serve the needs of its users
 - Write code that's easy to change
 - Write code that's easy to maintain
 - Write code that's easy to test
@@ -62,11 +62,11 @@ So let's apply it to software by first stating the goal.
 
 What is the primary goal of software?
 
-> The goal of software is to _continually_ **produce something that satisfies the needs of it's users**, while minimizing the effort it takes to do so.
+> The goal of software is to _continually_ **produce something that satisfies the needs of its users**, while minimizing the effort it takes to do so.
 
 I fought with coming up with the best definition for a long time, and I'm prepared to argue with you about why I think that's accurate.
 
-Software that doesn't serve the needs of it's users, simply isn't good software.
+Software that doesn't serve the needs of its users, simply isn't good software.
 
 And since the needs of our users changes often, it's important to make sure that software **was designed in order to be changed**.
 
