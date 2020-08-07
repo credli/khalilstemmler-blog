@@ -44,7 +44,7 @@
     "node-mailjet": "^3.3.1",
     "node-sass": "^4.13.0",
     "npm-api": "^0.4.13",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.21.0",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-adsense": "^0.1.0",
