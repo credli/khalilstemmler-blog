@@ -85,7 +85,8 @@ class Layout extends React.Component {
             cardSize={seo.cardSize}
             exactTitle={seo.exactTitle}
           />
-          {isExitModalActive ? <ExitModal/> : '' }
+          {/* We'll turn this off for now */}
+          {/* {isExitModalActive ? <ExitModal/> : '' } */}
            
           <Navigation rawMode={this.isRawModeEnabled()}/>
            
