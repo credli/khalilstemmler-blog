@@ -14,7 +14,7 @@ image: /img/blog/gatsby-related-posts/related-posts.png
 published: true
 ---
 
-<p class="special-quote">Translated by readers to: <a href="https://howtorecover.me/kak-sozdat-komponent-svyazannykh-soobscheniy-s-gatsbyjs">Russian</a></p>
+<p class="special-quote">Translated by readers to: <a href="https://web.archive.org/web/20201005060933/https://howtorecover.me/kak-sozdat-komponent-svyazannykh-soobscheniy-s-gatsbyjs">Russian</a></p>
 
 You know how some blogs have a section after reading an article that says "Related Posts" or "You might also like" (hint: check the bottom of this article 😜).
 
